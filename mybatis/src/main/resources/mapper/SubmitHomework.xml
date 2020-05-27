@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="javaee.mybatis.DAO.SubmitHomeworkDAO">
+    <insert id="submitHomework" parameterType="javaee.mybatis.model.StudentHomework">
+            INSERT INTO student_homework(id,student_id,homework_id,title,content,create_time)
+            VALUES (#{id},#{studentId},#{homeworkId},#{homeworkTitle},#{homeworkContent},#{createTime})
+    </insert>
+
+    <select id="showSubmit" resultType="javaee.mybatis.model.StudentHomework">
+        SELECT * FROM student_homework
+    </select>
+</mapper>
